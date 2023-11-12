@@ -10,6 +10,14 @@ def gerar_baralho(n_copias=2, coringas=True, embaralhado=True):
     for naipe in naipes:
         for numero in numeros:
             carta = numero + naipe
-            print(carta)
+            baralho.append(carta)
+    if coringas:    
+        baralho.extend(['JK1', 'JK2']) 
+    
+    if embaralhado:
+        random.shuffle(baralho)
 
-gerar_baralho()
+    return baralho
+
+baralho = gerar_baralho()
+print(baralho)
