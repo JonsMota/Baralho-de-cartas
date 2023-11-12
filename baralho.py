@@ -20,5 +20,10 @@ def gerar_baralho(n_copias=2, coringas=True, embaralhado=True):
 
     return baralho
 
+def mostrar_baralho(baralho):
+    print(f'Há {len(baralho)} cartas no baralho')
+    print('Cartas:')
+    print(' | '.join(baralho))
+
 baralho = gerar_baralho()
-print(baralho)
+mostrar_baralho(baralho)
