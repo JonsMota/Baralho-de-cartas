@@ -38,8 +38,15 @@ def dar_as_cartas(baralho, n_jogadores=4, n_cartas=5):
     
     return jogadores
 
+def mostrar_jogadores(jogadores):
+    for jogador, mao in jogadores.items():
+        print(f'Há {len(mao)} cartas na mão do jogador {jogador}')
+        print('Cartas:')
+        for carta in mao:
+            print(f' -> {carta}')
+
 
 baralho = gerar_baralho()
 mostrar_baralho(baralho)
 jogadores = dar_as_cartas(baralho)
-print(jogadores)
+mostrar_jogadores(jogadores)
