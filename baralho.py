@@ -25,5 +25,21 @@ def mostrar_baralho(baralho):
     print('Cartas:')
     print(' | '.join(baralho))
 
+def dar_as_cartas(baralho, n_jogadores=4, n_cartas=5):
+    jogadores = {} 
+
+    for i in range(n_jogadores):
+        mao = []
+        while len(mao) < n_cartas:
+            carta = baralho.pop(0)
+            mao.append(carta)
+        nome_jogador = f'Jogador {i+1}'
+        jogadores[nome_jogador] = mao
+    
+    return jogadores
+
+
 baralho = gerar_baralho()
 mostrar_baralho(baralho)
+jogadores = dar_as_cartas(baralho)
+print(jogadores)
