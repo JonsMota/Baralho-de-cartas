@@ -49,4 +49,7 @@ def mostrar_jogadores(jogadores):
 baralho = gerar_baralho()
 mostrar_baralho(baralho)
 jogadores = dar_as_cartas(baralho)
+
 mostrar_jogadores(jogadores)
+mostrar_baralho(baralho)
+
