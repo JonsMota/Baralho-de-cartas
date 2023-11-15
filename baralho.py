@@ -1,4 +1,12 @@
 import random
+import os 
+
+funcoes = {
+    "0": "gerar baralho",
+    "1": "mostrar baralho",
+    "2": "dar as cartas aos jogadores",
+    "3": "mostrar as cartas restante do baralho"
+}
 
 def gerar_baralho(n_copias=2, coringas=True, embaralhado=True):
     baralho = []
@@ -45,11 +53,26 @@ def mostrar_jogadores(jogadores):
         for carta in mao:
             print(f' -> {carta}')
 
+while True:
+    os.system("clear")
+    print(funcoes)    
+    print("O que deseja fazer?")
+    op = int(input())
+    
+    os.system("clear")
+    if op == 0:
+        baralho = gerar_baralho()
+    
+    elif op == 1:
+        mostrar_baralho(baralho)
+       
+    elif op == 2:
+        jogadores = dar_as_cartas(baralho)
+        mostrar_jogadores(jogadores)
+    elif op == 3:
+        mostrar_baralho(baralho)
 
-baralho = gerar_baralho()
-mostrar_baralho(baralho)
-jogadores = dar_as_cartas(baralho)
-
-mostrar_jogadores(jogadores)
-mostrar_baralho(baralho)
-
+    print("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨") 
+    print("0 - CONTINUAR | 9 - SAIR") 
+    if input() == 9: 
+        break 
